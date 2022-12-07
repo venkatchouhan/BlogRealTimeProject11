@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+{%extends 'BlogApp/base.html' %}
+{% block content %}
+    <div class="post">
+    <h1>Form</h1>
+    <hr/>
+    <form method="post" enctype="multipart/form-data">
+    {{ form.as_p }}
+    {% csrf_token %}
+        <input type="button" onclick="window.location.href='/thankyou/';" value="submit" />
+        <input type="button" onclick="window.location.href='/post/';" value="Home-Menu" />
+        <input type="button" onclick="window.location.href='/accounts/login/';" value="Login" />
+    </form>
+    </div>
+{% endblock %}

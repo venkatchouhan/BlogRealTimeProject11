@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+{% extends 'BlogApp/../../../BlogRealTimeProject11/templates/BlogApp/base.html' %}
+{% block content %}
+
+
+
+
+    <div>
+        <h1><b>{{ user.username }}</b></h1>
+        <form method="post" enctype="multipart/form-data">
+            {{ form.as_p }}
+            {% csrf_token %}
+            <br/>
+            <a href="/thankyou/"><button type="submit">Add post</button> </a>
+            <a href="/"><button type="button"> Back </button> </a>
+
+        </form>
+
+    </div>
+{% endblock %}

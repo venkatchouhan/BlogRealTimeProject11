@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+{% extends 'BlogApp/../../../BlogRealTimeProject11/templates/BlogApp/base.html'%}
+{% block content %}
+    <h1> Are you update post</h1>
+    <br/><br/>
+     <form method="post">
+      {% csrf_token %}
+      {{ form1.as_p }}
+     </form>
+    <input type="submit"><button>update</button>
+
+{% endblock %}

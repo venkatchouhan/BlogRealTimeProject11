@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+{%extends 'BlogApp/../../../BlogRealTimeProject11/templates/BlogApp/base.html'%}
+{%block title%}SRI SIVA BLOG{%endblock%}
+{%block content%}
+    <h1>MY Blog</h1>
+    <hr />
+    {%for post in post_list%}
+        <h2><a href="{{post.get_absolute_url}}">{{post.title}}
+
+
+
+        </a></h2>
+        <p id='date'>Published on {{post.publish}} by {{post.author|title}}</p>
+        {{post.body| truncatewords:30|linebreaks}}
+    {%endfor%}
+    {%include 'BlogApp/../../../BlogRealTimeProject11/templates/BlogApp/pagination.html' with page=post_list%}
+{%endblock%}

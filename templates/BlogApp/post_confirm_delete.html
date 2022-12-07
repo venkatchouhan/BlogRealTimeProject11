@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+{% extends 'BlogApp/../../../BlogRealTimeProject11/templates/BlogApp/base.html' %}
+{% block content %}
+<h1>Delete {{ post.name }} post</h1>
+    <form method="post">
+        {% csrf_token %}
+        Yes: <button type="submit">Delete-post</button><br><br>
+        No: <a href="{{ post.id }}"><button type="button">Cancel</button></a>
+    </form>
+{% endblock %}
