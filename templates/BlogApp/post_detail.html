@@ -4,9 +4,28 @@
 {%block content%}
     <h1>{{post.title}}</h1>
     <hr />
-      {%if post.image %}
-         <img src="/media/{{ post.image }}" height="125px" width="145px">
-      {%endif%}
+{%  with x=post.image.name|slice:"-3::" %}
+    {{ x }}
+      {%if x == "jpg" %}
+         <img src="/media/{{ post.image }}" height="200px" width="400px">
+      {%  elif x == "mp4" %}
+              <video autoplay="autoplay" controls="controls" width="125px" height="154">
+                  <source src="/media/{{ post.image }}" type="video/mp4"></source
+              </video>
+    {% elif x == "pdf" %}
+        <p>Download files</p>
+         <ol>
+            <li>
+                  <a href="/media/{{ post.image }}" target="_blank">pdf file</a>
+            </li>
+
+         </ol>
+    {% elif x == "mp3" %}
+        <audio controls>
+            <source src="/media/{{ post.image }}" type="audio/mp3">
+        </audio>
+    {% endif %}
+    {% endwith %}
     <p id='date'>Published on {{post.publish}} by {{post.author|title}}</p>
     {{post.body|linebreaks}}
     <br />

@@ -3,6 +3,7 @@
 {%block title%} {%endblock%}
 {%block content%}
 
+
     <h1 style="color: black">MY BLOG {{ user.username }}</h1>
     <p align="right" style="color: darkred"> Welcome !!!! {{user.username}}  </p>
     <a href="/postform/"><button>Add-Post</button></a>
@@ -17,7 +18,7 @@
             <img src="/media{{ post.image }}" width="50" height="40"/>
             {% elif x == "mp4" %}
                 <video autoplay="autoplay" controls="controls">
-                        <source src="/media{{post.image}}" type="video/mp4"></source>
+                     <source src="/media/{{ post.image }}" type="video/mp4"></source
                 </video>
 
 
